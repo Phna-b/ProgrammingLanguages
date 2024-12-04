@@ -1,0 +1,20 @@
+p([a,a,a]) -> False
+
+Entra em 2:
+    p([a,a | a]) :- p(a) - Retorna a
+        Entra em 2 novamente:
+            p([a]) é falso portanto, false
+
+
+p([a,a,a,a]) -> True
+
+Entra em 2:
+    p([a,a | a,a]) :- p(a,a) - Retorna a,a
+        Entra em 2 novamente:
+            p([a,a | ]) :p([]) - Retorna vazio
+                Entre em 1:
+                    p([]) é verdadeiro.
+
+
+1 - p([]).
+2 - p([X,Y|Z]):-p(Z).

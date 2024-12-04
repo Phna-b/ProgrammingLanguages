@@ -16,5 +16,5 @@ Entra em 2:
                     p([]) é verdadeiro.
 
 
-1 - p([]).
-2 - p([X,Y|Z]):-p(Z).
+1 - p([]). //Fato
+2 - p([X,Y|Z]):-p(Z). //Função

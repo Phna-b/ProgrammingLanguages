@@ -1,0 +1,30 @@
+p(x,[a,b,c]) -> False
+
+Entra em 2:
+    p(x,[a,b,c]):-p(x,[b,c]) - Retorna uma nova lista sem o primeiro elemento.
+        Entra em 2 novamente:
+            p(x,[b,c]):-p(x,[c]) - Retorna uma nova lista sem o primeiro elemnto.
+                Entra em 2 novamente:
+                    p(x,[c]):-p(x,[])  - Falso, pois não possuem mais elementos para realizar verificação.
+                    
+p(x,[a,b,c,x]) -> True
+
+Entra em 2:
+    p(x,[a,b,c,x]):-p(x,[b,c,x]) - Retorna uma nova lista sem o primeiro elemento.
+        Entra em 2 novamente:
+            p(x,[b,c,x]):-p(x,[c,x]) - Retorna uma nova lista sem o primeiro elemnto.
+                Entra em 2 novamente:
+                    p(x,[c,x]):-p(x,[x])  - Retorna uma nova lista sem o primeiro elemento.
+                        Entre em 1:
+                            p(x,[x]) - True, pois o elemento foi encontrado.
+                
+
+
+p(x,[x,z,k,b]) -> True
+
+Entra em 1:
+    p(x,[x,z,k,b]) -> p(x[x|___]) - Indepente do restante da lista retorna true, pois o elemento já foi encontrado.
+
+
+1 - p(H,[H|_]). //Fato
+2 - p(X,[_|T]):-p(X,T). //Função

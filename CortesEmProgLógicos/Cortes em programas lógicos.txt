@@ -1,0 +1,55 @@
+Cortes em programas lógicos 
+
+s(X):-if p(x) then q(x) else r(x).
+
+Suponha a implementação em Prolog com duas cláusulas.
+
+1 - s(X): -p(X),q(X). //Se px for verdadeiro, executa q(x)  ////Falha aqui (Falso), passa para proxima regra com proximo nome
+2 - s(X): -r(x) //Se px for falso, executa r(x)
+
+p(a)
+q(e)
+r(a)
+
+Se tentar s(a)
+p(a) existe, mas q(a) não, regra 1 retorna falso.
+
+Entra na regra 2, pois tem o mesmo nome. r(a) existe, portanto true.
+
+
+
+-------------------------------------------------------------------------------------------
+
+1 - s(X): -p(X),!,q(X). // "!" funciona como corte, toas as regras ocm mesmo nome são canceladas, essa posição importa.
+2 - s(X): -r(x) //
+
+p(a)
+q(e)
+r(a)
+
+Se tentar s(a)
+p(a) existe - verdadeiro, mas q(a) não, regra 1 retorna falso.
+
+E finaliza a execução
+
+--->Não entra na regra 2, pois o "!" cancela a verificação das regras com mesmo nome.
+
+
+
+---------------------------------------- Mudano o fato p(e) ----------------------------------------
+
+1 - s(X): -p(X),!,q(X). // "!" funciona como corte, toas as regras ocm mesmo nome são canceladas, essa posição importa.
+2 - s(X): -r(x) //
+
+p(e)
+q(e)
+r(a)
+
+Se tentar s(a)
+p(a) existe - falso, mas ainda não chegou no "!" portanto não cancela a leitura das regras com mesmo nome então segue para regra 2.
+
+regra 2 -> r(a) existe, então retorna true
+
+
+
+---------------------------------------

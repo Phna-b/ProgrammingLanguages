@@ -1,0 +1,37 @@
+if(p(x) and k(x)) then q(x) else r(x)
+
+
+
+1 - s(X):- p(X),k(X),!,q(X).  
+2 - s(X):- r(X).
+
+p(a).
+p(e).
+q(e).
+q(a).
+r(bb).
+k(a).
+k(e).
+
+Exemplo da utilização do desenovlvimento:
+
+s(a):
+
+Entra na regra 1:
+    Verificar se existe p(a) - true
+        Verifica se existe k(a) - true
+            Passa pelo '!', então impede a leitura do restante das regras com mesmo nome.
+                Verifica se existe q(a) - true.
+retorno final: true
+
+
+s(bb):
+
+Entra na regra 1:
+    Verifica se existe p(bb) - false
+        Sai da regra 1
+
+Entra na regra 2:
+    Verifica se existe r(bb) - true
+
+retorno final: true

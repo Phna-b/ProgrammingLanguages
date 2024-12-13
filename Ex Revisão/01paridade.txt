@@ -1,0 +1,2 @@
+p([X|T]):- (X mod 2 =:= 0) -> write(X), p(T); p(T).
+(X mod 2 =:= 0) verifica se o X é par -> (condição true) ; (condição false)

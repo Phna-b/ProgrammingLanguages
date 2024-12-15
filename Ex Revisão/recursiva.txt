@@ -1,0 +1,18 @@
+fat(0,1).
+fat(X,Y) :- (X > 0),X1 is X-1,fat(X1,W), Y is X*W.
+
+
+Exemplo - Entrada (3,Y):
+    3 > 0 - True;
+        X1 recebe 3-1 = 2;
+            chama fat(2,W);
+                2 > 0 - True;
+                    X1 recebe 2-1 = 1;
+                        chama fat(1,W);
+                            1 > 0 - True;
+                                X1 recebe 1-1 = 0;
+                                    chama fat(0,W);
+                                        0 > 0 - False; 
+                                            Retorna false;
+                                                Passa para o fato com mesmo nome;
+                                                    Retorna(0,1);

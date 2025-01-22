@@ -1,0 +1,17 @@
+Objetivo: Criar um sistema de recomendação de músicas com base nos gostos dos usuários e características das músicas.
+
+- Liste músicas com suas características: gênero, artista e década.
+
+- Desenvolva uma regra para recomendar músicas baseadas no gênero preferido do usuário.
+
+- Desenvolva uma regra para recomendar músicas de uma década específica.
+
+- Escreva consultas que retornem músicas:
+
+        a. Do gênero preferido do usuário.
+
+        b. Que sejam de uma década específica.
+
+        c. Que combinem artista e gênero.
+
+- Crie uma regra que recomenda músicas para um usuário com base em seus gêneros favoritos.

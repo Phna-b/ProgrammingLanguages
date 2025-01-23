@@ -5,5 +5,6 @@ musica(requiem,class,mozart,40).
 musica(hungUp,apop,madona,70).
 musica(popular,apop,madona,90).
 
-recomendar_por_genero(Genero, Titulo) :-
-    musica(Titulo, Genero, _, _).
+recomendar_gen(Genero, Titulo) :-musica(Titulo, Genero, _, _).
+
+recomendar_dec(Decada, Titulo):-musica(Titulo,_,_,Decada).

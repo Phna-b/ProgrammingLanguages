@@ -1,0 +1,6 @@
+mae(mary).
+tia(mary).
+mae(any).
+filha_unica(X):- \+tia(X).
+
+%Com entrada mae(X),filha_unica(X) o retorno é X = any

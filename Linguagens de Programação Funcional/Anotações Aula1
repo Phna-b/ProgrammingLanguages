@@ -1,0 +1,11 @@
+Mimetizar funções matematicas o maximo possível. (Mimetizar funções ao máximo possível)
+
+Por exemplo, para avaliar:
+
+                (x + y)/(a - b)
+
+O valor de x+y é calculado primeiro e deve ser armazenado enquanto a-b é avaliado
+
+O compilador manipula o armzenamento dos resultados intermediarios de avaliações de expressões em linguagens de alto nível.
+
+

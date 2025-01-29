@@ -1,0 +1,19 @@
+Haskell 
+
+O haskell tem uma sintaxe simples para escrever funções. Considere a função fatorial, que pode ser escrita em qualquer uma das maneiras a seguir:
+
+fact1(0) = 1
+fact1(n) = n * fact1(n-1)
+
+fact2(n) = if n == 0 then 1 else n * fact2(n-1)
+
+fact3(n)
+|(n) == 0 = 1
+|otherwise = n * fact3(n-1)
+
+
+->Haskel é sensível a maiúsculas e minúsculas.
+->Funções e variáveis devem começar com uma letra minúscula, enquanto tipos começam com uma letra maiúscula.
+->Haskell usa, por padrão, inteiros de precisão infinita:
+        fact1 20 = 2342902008176640000
+Uma resposta que claramente excede o maior valor int em um programa C/C++/Java

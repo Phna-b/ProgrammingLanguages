@@ -1,0 +1,4 @@
+Como acessar: 
+
+Abrir ubuntu -> ghci
+para abrir: load aula1.hs

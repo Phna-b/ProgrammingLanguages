@@ -1,0 +1,25 @@
+Fatorial de maneira recursiva:
+
+fact3:: integer -> integer
+fact3(n)
+    |(n) == 0 = 1
+    |otherwise = n * fact3(n-1)
+
+
+Somando os valores de uma lista:
+
+mysum [] = 0
+mysum (x:xs) = x + mysum xs
+    Exemplo de entrada mysum[3.5,5]
+        retorna 8.5.
+
+    Debugg:
+        mysum[1,2,3]
+            ->mysum(1 :[2,3]) = 1 + mysum(2,3)
+                ->mysum(2:[3]) = 2 + mysum(3)
+                    ->mysum(3:[]) = 3 + mysum[0]
+                        mysum[0] = 0
+                    ->3+0
+                ->2 + 3
+            -> 1 + 5
+        retorna 6

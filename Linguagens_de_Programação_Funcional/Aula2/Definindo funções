@@ -1,0 +1,28 @@
+Definindo funções haskell
+
+name :: Domain -> Range name x y z
+| g1 = e1
+| g2 = e2
+
+calcular o maixmo dentre 3 inteirios
+
+
+:: significa "é do tipo" -  O ultimo tipo fornecido é a saída
+
+Exemplo:
+
+max3 :: int -> int -> int -> int
+
+max3 x y z
+| x>=y && x>=z =x
+| y>=x && y>=z =y
+|otherwise = z
+
+No powershell:
+>max3 6 4 1
+retorna 6
+
+>max3 "alpha" "beta" "gamma"
+retorna gamma
+
+A função é polimórfica, é aquela que a definição se aplica a argumentos de vários tipos dentro das restrições dadas pela função assinatura.

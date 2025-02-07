@@ -1,0 +1,121 @@
+type ou :t verifica o tipo
+
+:type False
+    -> retorna False::Bool
+
+:type (2>2)
+    -> retorna False::Bool pois 2>2 é falso
+
+:type 'K'
+    -> retorna 'K'::Char
+
+:type 'palavra'
+    ->retorna 'palavra'::[Char]
+
+
+xor p q = (p || q) && not (p && q)
+xor::Bool->Bool->Bool
+
+Ele deduz a assinatura mais generica possível com base nos operadores passados para o sistema.
+
+
+Exemplo>
+
+comp n = n == 'k'
+
+type compn
+comp::char -> Bool
+
+Pois é passado char e verificado se o valor é igual a k, devolvendo True ou False.
+
+-------------------------------------------------------------------------------
+
+
+Para capturar essa generalidade o haskell utiliaz o tipo number, onde a assinatura de (+) é:
+    (+) ::(Num a) => a->a->a
+
+Num é um typeclass, um grupo de tipos, que consiste em todos os tipos considerados números.
+
+A parte (Num a) => da assinatura restringe "a" a tipos de número, podemos dizer também que são instâncias de Num.
+
+
+Exemplo:
+
+    (-33) +3.4
+    -29.6
+    :type(-33)
+    (-33):Num a=>a 
+
+    -33 não é int nem integer, ele é um valor polimorfico que pode "se transformar" em qualquer tipo de número.
+
+    
+    :type(3.4)
+    (3.4):Fractional a=>a 
+
+
+O simbolo de divisão / sempre considera como tipo Fractional de maneira inicial.
+
+:type length
+retorno:
+    length :: Foldable t => t a -> Int
+
+
+
+MUDANÇA DE TIPO
+
+Usando o fromIntegral consiog transformar o retorno do length em fraction e finalizar a divisão.
+
+ 5/fromIntegral(length([1,2,3]))
+1.6666666666666667
+
+
+
+
+
+----------------------------------------
+
+Assinatura do operador ==
+
+(==)::Eq a=>a->a->Bool
+
+
+é uma função polimórfica, ela compara dois valores do mesmo tipo, o quais pertencem a classe Eq, e retorna um valor do tipo Bool.
+
+
+-------------------------------------------------------------
+
+
+Podemos definir listas utilizando o comando let.
+
+let numeros=[1,2,3,4]
+let strings=["here","are"]
+
+O let é utilizado para definir uma variável
+
+As listas podem conter qualquer coisa, desde que sejam todos do mesmo tipo. Listas também podem conter outras listas.
+
+let listasDeListas = [[1,2],[3,4]
+
+
+-------------------------------------------------------------------------
+
+Tuplas
+
+Funcionam como lista, porem podem conter dois tipos
+
+Ex: 
+
+let tupla = ("Bob",277)
+
+
+ghci> :type tupla
+tupla :: Num b => (String, b)
+
+fst 
+    Extrai o primeiro elemento da tupla
+
+snd
+    Extrai o seugndo elementpo da tupla 
+
+
+-----------------------------------------------------------------------

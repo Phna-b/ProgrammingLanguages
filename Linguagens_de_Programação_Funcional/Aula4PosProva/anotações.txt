@@ -1,0 +1,15 @@
+Multiplica os valores da lista
+
+mulValorLista:: [Integer] -> [Integer]
+mulValorLista _ [] = []
+mulValorLista x (x:ns) = (x*n) : mulValorLista x ns
+
+
+Passar a função quer você quer usar
+            issso quer dizer que pasos uma função (int -> int)
+aplicar:: (Integer->Integer) ->(Integer) ->[Integer]
+aplicar _ [] = []
+aplicar f (n:ns) = (f n) : aplicar f ns
+
+Exemplo:
+>aplicar(*2) [1,2,3]

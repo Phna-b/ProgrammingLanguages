@@ -25,3 +25,36 @@ heads = map head
 
 --filter::(a -> Bool) -> [a] -> [a]
 -- é uma função do haskel que retorna o valor desejado, exemplo de uso filter (>3) [4,5,3] o retorno vai ser [4,5]
+
+
+
+
+----- FOLDS
+Ex1:
+sum::[Integer] -> Integer
+sum[] = 0
+sum (x:xs) = x + sum xs
+
+Ex2:
+concat::[[a]] =>[a]
+concat [] = []
+concat (x:xs) = x ++ concat xs
+
+Padrão de recursão fold. Não retorna lista e sim um valor baseado nela.
+
+
+
+
+
+------------- FOLD R (DOBRA A DIREITA)
+
+             
+
+  ---- Função de ordem superior, é uma função na qual sua assinatura você pode passa uma função como argumento
+  foldr:: (a->b->b) -> b ->[a] -> b  
+  foldr f acc[] = acc
+  foldr f acc (x:xs) = f x (foldr f acc xs)
+
+   - primeiro argumento do foldr é uma função de 2 argumentos
+        - O segundo argumento é o acumulador
+            -O terceiro argumento é a lista que será "dobrada"

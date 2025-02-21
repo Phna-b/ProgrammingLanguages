@@ -58,3 +58,9 @@ Padrão de recursão fold. Não retorna lista e sim um valor baseado nela.
    - primeiro argumento do foldr é uma função de 2 argumentos
         - O segundo argumento é o acumulador
             -O terceiro argumento é a lista que será "dobrada"
+
+
+Por exemplo
+foldr (+) 0 [1,2,3]
+
+    Retorna 6

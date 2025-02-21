@@ -3,7 +3,7 @@ aplicar _ [] = []
 aplicar f (n:ns) = (f n) : aplicar f ns
 
 --Exemplo: Retorna a raiz quadrada dos elementos da lista
---aplicar(sqrt) [9,25,81]
+--aplicar(sqrt) [9,25,81]   ---->>>>> posso utilizar o map no lugar od aplicar, funciona igualmente
 --Retorno: [3.0,5.0,9.0]
 
 

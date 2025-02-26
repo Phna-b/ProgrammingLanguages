@@ -1,0 +1,40 @@
+1- O que são funções de ordem superior em Haskell? Dê um exemplo simples.
+
+Função de ordem superior, são funções que recebem funções como seus parâmetros. 
+	Exemplo:
+		1- $ - ($) :: (a -> b) -> a -> b.	
+		2- map - (a -> b) -> [a] -> [b].
+
+2- Explique o funcionamento da função map. O que acontece ao aplicá-la na lista [1,2,3,4] com a função (2*)?
+
+A função map realiza a aplicação de uma função em uma lista por completo, no exemplo fornecido será aplicado (2*) a todos os valores da lista. Portanto o retorno será: [2,4,6,8].
+
+3- O que a função filter faz? Como usá-la para obter apenas os números pares de [1..10]?
+
+A função filter realiza a aplicação de um filtro na lista, portanto ele ira retornar uma lista com o resultado os valores que estão dentro o filtro. 
+Aplicação: filter even [1..10]
+
+
+4- Como a função foldr pode ser usada para calcular a soma dos elementos de uma lista?
+
+A função foldr recebe um operador (função), um valor acumulador e a lista para calcular.
+Exemplo: foldr (+) 0 [1,2,3]
+
+5- Qual a diferença entre foldr e foldl? Dê um exemplo prático para ilustrar.
+
+A maneira como ele é executado, ambos realizam a mesma operação porém iniciam de lados diferentes.
+Exemplo: 
+
+Utilizando: foldr (/) 1 [2,3,4]
+	As operações realizadas serão -> 3/4 -> 2/0.75 = 2.66
+
+Utilizando: foldl (/) 1 [2,3,4]
+	As operações realizadas serão -> 1/2 -> 0.5/3 -> 0,16/4 -> 0,04
+
+6- Escreva uma função usando map que transforme uma lista de strings em uma lista de seus respectivos comprimentos.
+
+7- Implemente a função all :: (a -> Bool) -> [a] -> Bool usando foldr.
+
+8- Como você pode utilizar map e filter em conjunto para obter os quadrados dos números ímpares de 1 a 10?
+
+9- Reescreva a função reverse usando foldl.

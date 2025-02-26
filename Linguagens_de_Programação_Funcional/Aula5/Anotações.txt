@@ -1,0 +1,38 @@
+Foldr1
+
+Não utiliza mais acumulador 
+
+foldr1:: (a->a->a)->[a]->a
+foldr1 f [x] = x
+foldr1 f (x:xs) = f x (foldr1 f xs)
+foldr1 _[] = error "Prelude.foldr1: empty list"
+
+foldr (/) [2,3,4]
+((/)2((/) 3 4))
+
+0.75 -> 2 / 0.75 = 2.66
+
+
+################
+
+Função Aplicação (Ordem superior, recebe função como argumento)
+
+
+
+sum $ map sqrt [1...130]
+
+Está aplicando a função sqrt (raiz) na lista - atrves do map
+Depois usa o sum $ para somar todos.
+
+Exemplo:
+    Entrada: sum $ map sqrt [1,25,9]
+    Saída: 9 
+
+
+Outro Exemplo:
+
+sum(filter(>10) (map (*2) [2...10]))
+
+Ou
+
+sum $ filter (>10) $ map(*2)[2...10]

@@ -1,0 +1,35 @@
+classes e instâncias 
+
+(==) :: (Eq a) => a -> a-> Bool
+
+Sobrecarga de operador, rescrever o == para realizar operações de tipos anteriormente não aceitos.
+
+
+Ex:
+data Foo = Foo {x :: Integer, str :: String}
+instance Eq Foo where
+    (Foo x1 str1) == (Foo x2 str2) = (x1 == x2) && (str1 == str2)
+
+
+Nesse caso, foi criado um tipo Foo, que receve inteiro e string.
+E também instanciado Eq para o foo, permitindo a utlização de == em tipos Foo
+
+Então
+    (x1 == x2) && (str1 == str2)
+
+    Fazendo com que a comparação == seja utilizada com base na clausula passada.
+
+
+
+
+Derivação
+
+Prelude> data Foo = Foo {x :: Integer, str :: String} deriving (Eq, Ord, Show)
+Prelude> let registro = Foo 1 "cadeira"
+Prelude> registro
+Foo {x = 1, str = "cadeira"}
+
+
+Prelude> data Forma = Circulo Float Float Float | Retangulo Float Float Float Float
+Prelude> Circulo 33.0 44.3 11.3
+    

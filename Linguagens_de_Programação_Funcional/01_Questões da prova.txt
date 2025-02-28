@@ -1,2 +1,2 @@
 1-Função de ordem superior
-2-Criar uma fução algebrica 
+2-Criar uma função algebrica 

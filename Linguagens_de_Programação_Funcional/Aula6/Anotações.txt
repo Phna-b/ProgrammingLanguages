@@ -1,0 +1,36 @@
+Tipos sinônimos 
+
+type = Nome = String 
+
+Nome agora é um sinônimo de String, posso utilizar o mesmo como string. Qualquer função que aceite string, aceita nome. 
+
+
+info String
+
+retorna:
+
+type String = [Char]
+
+
+Typo Algebrico
+
+    data Bool = False | True
+
+    Data significa que estamos definindo um novo tipo de dados. A parte de antes do = denota o tipo, que é BOOL. As partes após são construtores de valor.
+
+    O '|' é lido como OU.
+
+
+Ex:
+    data Forma = Circulo Float Float Float | Retangulo Float Float Float Float
+
+    O retangulo possui 4 campos do tipo float, circulo possui apenas 3. As duas primeiras são as cordenadas do canto superior esquerdo e as duas segundas são cordenadas do canto inferior direito, no caso do retangulo.
+
+    exmplo: type Retangulo
+        Retangulo :: Float -> Float -> Float -> Float -> Forma
+
+    
+
+superficie :: Forma -> Float
+superficie(Circulo __r) = pi * r ^ 2
+superficie(Retangulo x1 y1 x2 y2) = (abs $ x2 - 1) * (abs $ y2 - y1) 

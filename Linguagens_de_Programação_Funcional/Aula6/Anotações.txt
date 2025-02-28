@@ -1,3 +1,7 @@
+1-Função de ordem superior
+2-Criar uma fução algebrica 
+
+
 Tipos sinônimos 
 
 type = Nome = String 
@@ -34,3 +38,7 @@ Ex:
 superficie :: Forma -> Float
 superficie(Circulo __r) = pi * r ^ 2
 superficie(Retangulo x1 y1 x2 y2) = (abs $ x2 - 1) * (abs $ y2 - y1) 
+
+Ex:
+    superficie $ Circulo 22.22 22.3 22.3
+    1562.2826

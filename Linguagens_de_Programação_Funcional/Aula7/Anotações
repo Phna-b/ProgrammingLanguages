@@ -108,3 +108,24 @@ Exemplo:
     Retorna Just 15
 
 <$> passa o operador de multiplicação para o Just 5, posteriormente aplica a multiplicação da função no just 3. Retorna Just 15.
+
+
+
+
+##############################################
+Mônada 
+
+
+Verifica se X é par e divide por 2, caso conrario nothing. DIV É DIFERENTE DO OPERADOR \ 
+
+half x = if even x 
+    then 
+        Just (x 'div' 2)
+    else Nothing
+
+
+half 4
+    Retorna Just 2
+
+half Just 4
+    Retorna ERRO

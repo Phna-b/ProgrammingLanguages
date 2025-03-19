@@ -129,3 +129,19 @@ half 4
 
 half Just 4
     Retorna ERRO
+
+
+
+:t(>>=)
+
+Retira o valor da função aplica onde está sendo utilizado, e depois retorna a função ao valor após a execução.
+
+
+Usando na função half, Just 4 >>= half ele retorna Just 2
+
+exemplo:
+Just 4 >>= half
+    Retorna Just 2 
+
+[3,4,5]>>= \x ->[x,-x]
+    Retorna [3,-3,4,-4,5,-5]  -- Adiciona uma lista negativa da original

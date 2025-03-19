@@ -1,0 +1,54 @@
+Módulos 
+
+É uma coleção de funções, tipos e classes.
+
+A sintaxe para importar módulos em um script haskell é import <nome do módulo>.
+
+Ex:
+
+Prelude>import Data.List
+
+Data.list> :type find
+
+find:: Foldable t => (a -> Bool) -> t a -> Maybe A
+
+O tipo Maybe (talvez) define dois contextos relacionados: Notthing (Nada) e Just a (Simplesmente a) onde a é um elmento que nós definimos, como um número ou uma string:
+
+    data Maybe a = Nothing | Just A
+
+Assim como uma lista pode ser uma lista vazia ou uma lista com alguns elementos , um valor Mayne pode ser nenhum elemento ou um único elemento.
+
+
+
+Exemplo:
+
+Prelude Data.List> find(>4) [1,2,3,4,77]
+Just 77
+
+Prelude Data.List> find(>100) [1,2,3,4,77]
+Nothing
+
+
+
+#############################
+Clase Functor 
+
+é uma classe para tipos que podem ser mapeados (Usar função map)
+Possui um unico metodo chamado fmap.
+
+class Functor f where
+    fmap::(a->b) -> f a -> f b
+
+
+Maybe é uma instânica da classe Functor
+
+Instance Functor Maybe where
+    fmap f Nothing = Nothing
+    fmap f(Just x) = Just(f x)
+
+    Exemplo:
+        Prelude Data.List> fmap(2+)(Just 2)
+            Just 4
+
+        Prelude Data.List> fmap(2+)[1,2,3]
+            [3,4,5]

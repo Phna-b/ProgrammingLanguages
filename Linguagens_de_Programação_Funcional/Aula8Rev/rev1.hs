@@ -15,17 +15,19 @@ pega x = mysumP(take 5 x)
     
 --4
 
-data Forma = Circulo Float Float Float | Retangulo Float Float Float Float | Triangulo Float Float Float | Cilindro Float Float Float deriving (Eq, Show)
-superficie::Forma -> Float
-superficie(Retangulo x1 y1 x2 y2) = (abs $ x2 - 1) * (abs $ y2 - y1) 
+data Forma =  Retangulo Float Float 
+area :: Forma -> Float
+area(Retangulo x1 y1) = x1 * y1
 
 areaRet = do
     putStrLn "Qual a base do retangulo?"
     msg <- getLine
-    let msg1 = read msg :: Int 
+    let msg1 = read msg :: Float 
     putStrLn "Digite a altura do retangulo?"
     des <- getLine
-    let altura = read des :: Int 
-    putStrLn $ "Area: "
+    let altura = read des :: Float 
+    let resultado = area (Retangulo msg1 altura)
+    putStrLn $ "Área: " ++ show resultado
+
     
 -- Procurar como converter o número

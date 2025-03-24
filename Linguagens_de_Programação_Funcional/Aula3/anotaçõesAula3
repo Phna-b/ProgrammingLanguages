@@ -94,7 +94,7 @@ O let é utilizado para definir uma variável
 
 As listas podem conter qualquer coisa, desde que sejam todos do mesmo tipo. Listas também podem conter outras listas.
 
-let listasDeListas = [[1,2],[3,4]
+let listasDeListas = [1,2],[3,4]
 
 
 -------------------------------------------------------------------------

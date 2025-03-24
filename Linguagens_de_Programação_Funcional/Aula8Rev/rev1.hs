@@ -30,4 +30,17 @@ areaRet = do
     putStrLn $ "Área: " ++ show resultado
 
     
--- Procurar como converter o número
+--5
+q5 xs = map (\x -> x * 1 + 2) xs
+
+--6
+reverso :: [a] -> [a]
+reverso = foldl (\y x -> x : y) []
+
+
+-- \y x -> x : y é uma função temporaria, que está alterando a ordem
+
+--7
+ 
+replica 0 _ = []
+replica x n = n : replica (x-1) n

@@ -29,3 +29,4 @@ areaRet = do
     teste = altura*msg1
     putStrLn $ "Area: "
     
+-- Procurar como converter o número

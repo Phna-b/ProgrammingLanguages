@@ -12,6 +12,9 @@ mysumP [a,b] = b
 mysumP (x:xs) = mysumP xs 
 pega x = mysumP(take 5 x) 
 
+ 
+quinto xs = head ( tail (tail (tail (tail xs) )) )
+ 
     
 --4
 
@@ -37,6 +40,12 @@ q5 xs = map (\x -> x * 1 + 2) xs
 reverso :: [a] -> [a]
 reverso = foldl (\y x -> x : y) []
 
+reverso1 :: [a] -> [a]
+reverso1 = foldl adicionarElemento []
+
+adicionarElemento :: [a] -> a -> [a]
+adicionarElemento y x = x : y
+
 
 -- \y x -> x : y é uma função temporaria, que está alterando a ordem
 
@@ -44,3 +53,14 @@ reverso = foldl (\y x -> x : y) []
  
 replica 0 _ = []
 replica x n = n : replica (x-1) n
+
+replica1 0 _ = []
+replica1 n x = x : replica1 (n-1) x
+
+--8
+
+pegue n xs = take n xs
+
+--9
+r1 0 xs = xs
+r1 n (_:xs) = r1 (n-1) xs 

@@ -26,7 +26,6 @@ areaRet = do
     putStrLn "Digite a altura do retangulo?"
     des <- getLine
     let altura = read des :: Int 
-    teste = altura*msg1
     putStrLn $ "Area: "
     
 -- Procurar como converter o número

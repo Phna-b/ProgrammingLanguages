@@ -66,7 +66,7 @@ r1 0 xs = xs
 r1 n (_:xs) = r1 (n-1) xs 
 
 --10 
-
+{- 
 Nenhum dos dois códigos funciona. Pois a sintaxe está incorreta, o correto seria:
 
 a) fmap (2+) (Just 3) - O fmap só permite a aplicação de funçõe em um único valor, caso seja preciso aplicar mais de uma função em mais de um valor é utilizado <$>
@@ -81,3 +81,7 @@ b) Just (+2) <*> Just 3 - O <*> retorna o resultado da aplicação de diversas f
     Exemplo:
         [(*2), (+3)] <*> [1, 2, 3]
             Retorna: [2,4,6,3,6,9]
+-}
+
+
+ 

@@ -1,0 +1,36 @@
+Listas:
+    Listas podem possuir qualquer tipo, desde que TODOS sejam do mesmo tipo.
+    Listas podem possuir listas de listas.
+        Exemplo: let li = [[1,2],[45,5]]
+
+Tupla:
+    Uma tupla é uma coleção de valores de diferentes tipos.
+        Exemplo: let tupla = ("bob",235)
+    Também podemos ter tuplas de listas, e qualquer combinação.
+        Exemplo: listaTupla = ((2,3),[2,3])
+
+Funções de ordem superior:
+    São funções que recebem outras funções como argumentos.
+    Exemplo: map  
+    map :: (a -> b) -> [a] -> [b]
+
+    Exemplo2: 
+    multiplicaLista m = map ((*) m)
+        >multiplicaLista 2 [1,2,3]
+
+    Exemplo 3:
+    filter (>4) [4,34,56,2,51]
+        Retorna:[34,56,51]
+
+    
+    Função lambda:
+        São funções declaradas no momento, "temporarias".
+        Exemplo:
+            map (\x -> x+1)[1,2,3] = map (+1)[1,2,3]
+
+        Exemplo 2:  (Funciona com tuplas)
+            let lista = [(1,2),(3,4)]
+            map (\(a,b) -> a + b) lista
+
+
+--- Parei no folds

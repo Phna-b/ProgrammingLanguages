@@ -39,6 +39,29 @@ areaRet = do
 func xs = map(\x -> x * 2 + 2) xs
 
 -- 06
+reverso :: [a] -> [a]   
+reverso = foldl(\x y -> y : x) []
 
+-- 07 
+
+replica 0 _ = []
+replica n x = x : replica (n-1) x
+
+-- 08 
+{-. Escreva uma função que retorne os n primeiros elementos de uma lista. Ex:
+Primeiros 2 [10,33,44,61,99] = [10,33]-}
+
+primeiros 0 _ = []
+primeiros n (x:xs) = x : primeiros (n-1) xs
+
+-- 09
+ignora 0 xs = xs 
+ignora n (x:xs) = ignora (n-1) xs
  
- 
+
+-- 10 
+{-10. Os seguintes comandos são equivalentes?
+(a) fmap (+2) Just 3
+(b) (+2) <*> Just 3
+
+Não, fmap é utilizado para aplicar uma função em um valor especifico. <*> Possíbilita relizar a aplicação de diversas funções em uma lista, retornando o valor separadamente de cada operador-} 

@@ -44,7 +44,7 @@ replica n x = x : replica (n-1) x
 primeiro 0 _ = []
 primeiro n (x:xs) = x : primeiro (n-1) xs
  
--- QUestão 09
+-- Questão 09
 
 ignora 0 xs = xs
 ignora n (x:xs) = ignora (n-1) xs

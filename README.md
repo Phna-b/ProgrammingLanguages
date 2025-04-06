@@ -1,4 +1,4 @@
-# ProgLanguages
+# Programming languages
 CSI 107 - Linguagens de programação - UFOP
 
 Ementa:  Programação em Lógica, Programas lógicos, Resolução SLD, Negação em programas

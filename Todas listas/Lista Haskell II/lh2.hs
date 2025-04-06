@@ -1,28 +1,28 @@
 -- Questão 01
 import Data.List
-ordena xs = sort xs
+ordena xs = sort xs -- Sort faz a ordenação dos valorees
 
 -- Questão 02
 -- [[1,2],3,[4,5]] é incorreto, pois listas só armazenam valores de um mesmo tipo. No caso exemplificado temos tipo: Lista, Int e Lista portanto dessa forma o código está incorreto.
 
 -- Questão 03 
 quintoEle xs 
-    | length xs >= 5 = head( tail ( tail ( tail (tail xs))))
-    | otherwise = head(tail(xs))
+    | length xs >= 5 = head( tail ( tail ( tail (tail xs)))) -- Usa tail para chegar até o quinto elemento, e retorna a cabeça.
+    | otherwise = error "A lista não pode ser menor que 5!"
 
 -- Questão 04
 
-data Forma = Retangulo Float Float
-area(Retangulo x1 y1) = x1 * y1
+data Forma = Retangulo Float Float -- Tipo retangulo
+area(Retangulo x1 y1) = x1 * y1 -- Calculo da area do tipo retangulo
 
 areaRet = do
     putStrLn "Qual a base do retangulo?"
-    msg <- getLine
-    let msg1 = read msg :: Float 
+    msg <- getLine -- Recebe o valor da basde
+    let msg1 = read msg :: Float  -- armazena o valor
     putStrLn "Digite a altura do retangulo?"
-    des <- getLine
-    let altura = read des :: Float 
-    let resultado = area (Retangulo msg1 altura)
+    des <- getLine -- Recebe op valor da altura 
+    let altura = read des :: Float -- armazena o valor 
+    let resultado = area (Retangulo msg1 altura) -- Usa a função para calcular
     putStrLn $ "Área: " ++ show resultado
 
 -- Questão 05
@@ -32,22 +32,22 @@ quest5 xs = map (\x -> x*1+2) xs
 
 -- Questão 06
 reverso :: [a] -> [a]
-reverso   = foldl (\x y -> y : x) []
+reverso   = foldl (\x y -> y : x) [] -- Aplica a função lambada, começando pela esquerda. Invertendo cada valor.
 
 -- Questão 07
 
 replica 0 _ = []
-replica n x = x : replica (n-1) x
+replica n x = x : replica (n-1) x -- Retorna uma nova lista, adiciona o valor solicitado e usa recursão para controlar o tamanho de n.
  
 
 -- Questão 08
 primeiro 0 _ = []
-primeiro n (x:xs) = x : primeiro (n-1) xs
+primeiro n (x:xs) = x : primeiro (n-1) xs -- Usa n para controlar quando parar, e adiciona os valores a uma lista de retorno.
  
--- QUestão 09
+-- Questão 09
 
 ignora 0 xs = xs
-ignora n (x:xs) = ignora (n-1) xs
+ignora n (x:xs) = ignora (n-1) xs -- Usa a mesma lógica da questão anterior, mas retornando a calda quando o n chega a 0.
 
 
 --10 
